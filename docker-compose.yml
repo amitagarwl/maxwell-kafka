@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  maxwell:
+    image: 'zendesk/maxwell'
+    environment:
+      - user=$MYSQL_USERNAME
+      - password=$MYSQL_PASSWORD
+      - host=$MYSQL_HOST
+      - producer=kafka
+      - kafka.bootstrap.servers=$KAFKA_HOST:$KAFKA_PORT
+      - kafka_topic=maxwell
